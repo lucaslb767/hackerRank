@@ -11,6 +11,21 @@ public class Solution {
     // Complete the hourglassSum function below.
     static int hourglassSum(int[][] arr) {
 
+        int soma = -7890;
+        for(int i=0; i<4;i++){
+            for(int j = 0; j<4; j++){
+                int topo = arr[i][j] + arr[i][j+1] + arr[i][j+2];
+                int meio = arr[i+1][j+1];
+                int baixo = arr[i+2][j] + arr[i+2][j + 1] + arr[i+2][j + 2];
+
+                if((topo+meio+baixo)>soma){
+                    soma = topo+meio+baixo;
+                }
+            }
+        }
+
+        return soma;
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
